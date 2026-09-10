@@ -1,9 +1,9 @@
-/* 日本語を文字単位で不自然に分断しにくくする共通ルール */
+/* 日本語を文字単位で不自然に落とさず、文節に近い位置で折り返す共通ルール */
 html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hyphens:none}
 
 @supports (word-break:auto-phrase){
   html[lang="ja"],body{word-break:auto-phrase}
-  p,li,dt,dd,label,.lead,.hero-caption,.craft-intro-copy p,.ledger-row p,.ledger-side,.person-card p,.page-label p,.message-copy p,.thread-item p,.thread-note,.core-copy p,.contact-note p,.form-note{word-break:auto-phrase;text-wrap:pretty}
+  p,li,dt,dd,label,.hero-copy p,.hero-note p,.philosophy-copy p,.note-card p,.person-copy p,.page-hero-copy p,.message-copy p,.service-note p,.service-note aside,.business-copy p,.contact-note p,.form-note{word-break:auto-phrase;text-wrap:pretty}
   h1,h2,h3,.section-title{word-break:auto-phrase;text-wrap:balance}
 }
 
@@ -18,6 +18,6 @@ html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hy
   .jp-flow wbr{display:none}
 }
 
-.hero-manifesto-inner,.craft-intro>*,.work-ledger-head>*,.ledger-row>*,.person-card-inner,.page-label-grid>*,.message-grid>*,.profile-row>*,.thread-item,.core-business>*,.business-fact,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
+.hero-journal>*,.hero-meta>*,.philosophy-grid>*,.work-note-head>*,.note-card,.person-story-grid>*,.page-hero-inner>*,.message-grid>*,.profile-row>*,.service-note>*,.business-feature>*,.business-facts>*,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
 
-@media(max-width:760px){p,li,dt,dd,label{max-width:100%}}
+@media(max-width:720px){p,li,dt,dd,label{max-width:100%}}
