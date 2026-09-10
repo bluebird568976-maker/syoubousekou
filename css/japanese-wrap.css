@@ -1,0 +1,23 @@
+/* 日本語を文字単位で不自然に分断しにくくする共通ルール */
+html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hyphens:none}
+
+@supports (word-break:auto-phrase){
+  html[lang="ja"],body{word-break:auto-phrase}
+  p,li,dt,dd,label,.lead,.hero-caption,.craft-intro-copy p,.ledger-row p,.ledger-side,.person-card p,.page-label p,.message-copy p,.thread-item p,.thread-note,.core-copy p,.contact-note p,.form-note{word-break:auto-phrase;text-wrap:pretty}
+  h1,h2,h3,.section-title{word-break:auto-phrase;text-wrap:balance}
+}
+
+.jp-flow{line-break:strict;overflow-wrap:normal;hyphens:none}
+@supports not (word-break:auto-phrase){
+  .jp-flow{word-break:keep-all}
+  .jp-flow .jp-phrase{display:inline-block;max-width:100%;white-space:nowrap}
+  .jp-flow wbr{display:inline}
+}
+@supports (word-break:auto-phrase){
+  .jp-flow .jp-phrase{display:inline;max-width:none;white-space:normal}
+  .jp-flow wbr{display:none}
+}
+
+.hero-manifesto-inner,.craft-intro>*,.work-ledger-head>*,.ledger-row>*,.person-card-inner,.page-label-grid>*,.message-grid>*,.profile-row>*,.thread-item,.core-business>*,.business-fact,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
+
+@media(max-width:760px){p,li,dt,dd,label{max-width:100%}}
