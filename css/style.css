@@ -1,0 +1,229 @@
+:root{
+  --ink:#1c1b18;
+  --ink-soft:#55524b;
+  --paper:#f2eee4;
+  --paper-deep:#e6dfd1;
+  --white:#fffdf8;
+  --red:#a63b30;
+  --red-dark:#7f2b23;
+  --olive:#4f5746;
+  --line:#c8c0b2;
+  --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;line-height:1.9;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button,input,textarea{font:inherit}
+.container{width:min(calc(100% - 56px),var(--max));margin-inline:auto}
+.section{padding:108px 0}
+.kicker{margin:0 0 16px;color:var(--red);font:800 11px/1.4 Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.section-title{margin:0;font-size:clamp(36px,5.2vw,68px);font-weight:800;line-height:1.2;letter-spacing:-.045em}
+.lead{max-width:760px;margin:24px 0 0;color:var(--ink-soft);font-size:15px;line-height:2.15}
+.sample-note{margin:0;padding:14px 18px;border-left:4px solid var(--red);background:#fbf7ef;color:#6b6257;font-size:12px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-width:190px;padding:14px 20px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-size:12px;font-weight:800;letter-spacing:.04em;transition:.2s}
+.button:hover{transform:translateY(-2px)}
+.button-red{background:var(--red);border-color:var(--red);color:#fff}
+.button-red:hover{background:var(--red-dark);border-color:var(--red-dark)}
+.button-dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.text-link{display:inline-flex;align-items:center;gap:10px;padding-bottom:3px;border-bottom:1px solid currentColor;font-size:12px;font-weight:800}
+.text-link::after{content:"→"}
+
+/* header: quiet workshop signboard */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(242,238,228,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.header-inner{min-height:92px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:36px}
+.logo img{width:250px;height:auto}
+.site-nav{justify-self:end;display:flex;align-items:center;gap:6px}
+.site-nav a{padding:12px 15px;font-size:12px;font-weight:800;position:relative}
+.site-nav a::after{content:"";position:absolute;left:15px;right:15px;bottom:7px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:.2s}
+.site-nav a:hover::after,.site-nav a[aria-current="page"]::after{transform:scaleX(1)}
+.header-contact{display:inline-flex;align-items:center;padding:12px 16px;background:var(--ink);color:#fff;font-size:11px;font-weight:800}
+.menu-button{display:none;border:1px solid var(--ink);background:transparent;padding:10px 12px;font:800 10px Arial,sans-serif;letter-spacing:.12em}
+
+/* home hero: photo + vertical manifesto */
+.home-hero{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.5fr);min-height:720px;background:var(--ink)}
+.hero-photo{position:relative;min-height:720px;background-image:linear-gradient(180deg,rgba(20,18,15,.08),rgba(20,18,15,.22)),url("https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&dpr=1&w=1800");background-size:cover;background-position:center 42%;overflow:hidden}
+.hero-photo::before{content:"";position:absolute;left:0;bottom:0;width:46%;height:14px;background:var(--red)}
+.hero-photo::after{content:"CRAFT / SAFETY / CONSTRUCTION";position:absolute;left:26px;top:28px;padding:9px 12px;background:rgba(28,27,24,.82);color:#fff;font:800 9px Arial,sans-serif;letter-spacing:.18em}
+.hero-caption{position:absolute;left:30px;bottom:28px;max-width:420px;padding:17px 20px;background:rgba(247,242,232,.93);border-left:5px solid var(--red);font-size:12px;line-height:1.8}
+.hero-manifesto{position:relative;display:flex;align-items:center;justify-content:center;padding:42px 24px;background:var(--ink);color:#fff;border-left:1px solid rgba(255,255,255,.12)}
+.hero-manifesto-inner{height:610px;display:flex;flex-direction:column;align-items:center;justify-content:space-between}
+.hero-manifesto .eyebrow{margin:0;writing-mode:vertical-rl;color:#c7bbaa;font:700 10px Arial,sans-serif;letter-spacing:.22em}
+.hero-manifesto h1{margin:0;writing-mode:vertical-rl;text-orientation:mixed;font-size:clamp(42px,5.1vw,70px);font-weight:800;line-height:1.25;letter-spacing:.08em}
+.hero-manifesto h1 em{font-style:normal;color:#d96455}
+.hero-manifesto .hero-mark{width:42px;height:42px;border:1px solid #fff;display:grid;place-items:center;color:#d96455;font:900 13px Arial,sans-serif;transform:rotate(-4deg)}
+
+/* intro note */
+.craft-intro{display:grid;grid-template-columns:1fr minmax(300px,.62fr);gap:90px;align-items:start}
+.craft-intro-copy h2{max-width:820px;margin:0;font-size:clamp(40px,5.8vw,76px);font-weight:800;line-height:1.14;letter-spacing:-.05em}
+.craft-intro-copy p{max-width:720px;margin:28px 0 0;color:var(--ink-soft);line-height:2.15}
+.craft-note{position:relative;padding:34px 34px 36px;background:#fffaf0;border:1px solid var(--line);box-shadow:12px 12px 0 var(--paper-deep);transform:rotate(1deg)}
+.craft-note::before{content:"";position:absolute;left:34px;top:-13px;width:92px;height:26px;background:rgba(192,177,145,.55);transform:rotate(-4deg)}
+.craft-note .note-title{margin:0 0 20px;font-size:19px;font-weight:800}
+.craft-note ul{margin:0;padding:0;list-style:none;border-top:1px dashed #b7ad9d}
+.craft-note li{display:grid;grid-template-columns:32px 1fr;gap:12px;padding:15px 0;border-bottom:1px dashed #b7ad9d;font-size:13px;color:#5b564e}
+.craft-note li span{color:var(--red);font:800 11px Arial,sans-serif}
+
+/* work ledger */
+.work-ledger{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.work-ledger-head{display:grid;grid-template-columns:1fr 320px;gap:80px;align-items:end;margin-bottom:48px}
+.work-ledger-head p:last-child{margin:0;color:#6b665e;font-size:12px;line-height:2}
+.ledger-list{border-top:2px solid var(--ink)}
+.ledger-row{display:grid;grid-template-columns:100px minmax(0,1fr) 260px;gap:34px;align-items:start;padding:34px 0;border-bottom:1px solid var(--line)}
+.ledger-no{font:900 44px/1 Arial,sans-serif;color:#b5ac9d}
+.ledger-row h3{margin:0;font-size:28px;line-height:1.4}
+.ledger-row p{margin:9px 0 0;color:#646058;font-size:13px}
+.ledger-side{padding-left:22px;border-left:1px solid var(--line);color:#7c756a;font-size:11px;line-height:1.9}
+
+/* person / craftsmanship photo */
+.person-story{position:relative;min-height:680px;background-image:url("https://images.pexels.com/photos/21812143/pexels-photo-21812143/free-photo-of-electrician-working-with-cables.jpeg?auto=compress&dpr=1&w=1800");background-size:cover;background-position:center;color:#fff}
+.person-story::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(21,20,17,.12) 0%,rgba(21,20,17,.18) 45%,rgba(21,20,17,.72) 100%)}
+.person-card{position:relative;z-index:2;margin-left:auto;width:min(46%,570px);min-height:680px;display:flex;align-items:center;padding:70px 54px;background:rgba(28,27,24,.88)}
+.person-card-inner{max-width:460px}
+.person-card .quote-mark{color:#d96355;font:900 76px/.8 Georgia,serif}
+.person-card h2{margin:12px 0 0;font-size:clamp(38px,4.8vw,62px);line-height:1.17;letter-spacing:-.04em}
+.person-card p{margin:24px 0 0;color:#ddd6ca;line-height:2}
+
+/* page hero: photo with overlapping paper label */
+.page-hero{position:relative;padding-bottom:74px;background:var(--paper)}
+.page-hero-photo{height:430px;background-size:cover;background-position:center;filter:saturate(.82)}
+.page-hero.about .page-hero-photo{background-image:url("https://images.pexels.com/photos/21812143/pexels-photo-21812143/free-photo-of-electrician-working-with-cables.jpeg?auto=compress&dpr=1&w=1800")}
+.page-hero.service .page-hero-photo{background-image:url("https://images.pexels.com/photos/13756513/pexels-photo-13756513.jpeg?auto=compress&dpr=1&w=1800")}
+.page-hero.business .page-hero-photo{background-image:url("https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&dpr=1&w=1800")}
+.page-hero.contact .page-hero-photo{background-image:url("https://images.pexels.com/photos/29871587/pexels-photo-29871587/free-photo-of-electrician-working-on-renovation-project-in-turkiye.jpeg?auto=compress&dpr=1&w=1800")}
+.page-label{position:relative;width:min(calc(100% - 56px),var(--max));margin:-92px auto 0;padding:38px 44px;background:var(--white);border-top:8px solid var(--red);box-shadow:0 18px 44px rgba(48,42,34,.12)}
+.page-label-grid{display:grid;grid-template-columns:130px minmax(0,1fr);gap:34px;align-items:end}
+.page-label .page-no{font:900 78px/.9 Arial,sans-serif;color:#d7cfc1}
+.page-label small{display:block;color:var(--red);font:800 10px Arial,sans-serif;letter-spacing:.18em}
+.page-label h1{margin:9px 0 0;font-size:clamp(46px,6.5vw,82px);line-height:1;font-weight:800;letter-spacing:-.055em}
+.page-label p{max-width:720px;margin:15px 0 0;color:#686158;font-size:13px}
+
+/* about */
+.message-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:70px;align-items:center}
+.message-photo{min-height:560px;background-image:url("https://images.pexels.com/photos/8961695/pexels-photo-8961695.jpeg?auto=compress&dpr=1&w=1400");background-size:cover;background-position:center;position:relative}
+.message-photo::after{content:"一つずつ。丁寧に。";position:absolute;right:-18px;bottom:24px;padding:18px 16px;background:var(--red);color:#fff;writing-mode:vertical-rl;font-size:18px;font-weight:800;letter-spacing:.12em}
+.message-copy h2{margin:0;font-size:clamp(38px,5vw,64px);line-height:1.25;letter-spacing:-.045em}
+.message-copy p{margin:24px 0 0;color:#5f5a52;line-height:2.1}
+.profile-sheet{margin-top:46px;border-top:2px solid var(--ink)}
+.profile-row{display:grid;grid-template-columns:210px 1fr;gap:28px;padding:18px 8px;border-bottom:1px solid var(--line);font-size:14px}
+.profile-row dt{font-weight:800}
+.profile-row dd{margin:0;color:#5d5850}
+
+/* service */
+.service-thread{position:relative;margin-top:54px;padding-left:74px}
+.service-thread::before{content:"";position:absolute;left:23px;top:6px;bottom:8px;width:2px;background:var(--line)}
+.thread-item{position:relative;padding:0 0 58px}
+.thread-item:last-child{padding-bottom:0}
+.thread-item::before{content:attr(data-no);position:absolute;left:-74px;top:0;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font:800 11px Arial,sans-serif}
+.thread-item:first-child::before{background:var(--red)}
+.thread-item h2{margin:0;font-size:clamp(32px,4vw,48px);line-height:1.3}
+.thread-item p{max-width:760px;margin:15px 0 0;color:#625e56}
+.thread-note{max-width:760px;margin-top:18px;padding:15px 18px;background:#fff9ef;border:1px dashed #b9af9f;color:#746c61;font-size:12px}
+
+/* business */
+.core-business{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:0;border:1px solid var(--ink);background:#fff}
+.core-copy{padding:54px 54px 58px}
+.core-copy .core-no{font:900 76px/1 Arial,sans-serif;color:#e0d8ca}
+.core-copy h2{margin:18px 0 0;font-size:clamp(40px,5vw,64px);line-height:1.17}
+.core-copy p{margin:20px 0 0;color:#625d55}
+.core-photo{min-height:540px;background-image:url("https://images.pexels.com/photos/13756513/pexels-photo-13756513.jpeg?auto=compress&dpr=1&w=1400");background-size:cover;background-position:center;position:relative}
+.core-photo::before{content:"FIRE SAFETY / CONSTRUCTION";position:absolute;right:22px;bottom:22px;padding:10px 12px;background:var(--ink);color:#fff;font:800 9px Arial,sans-serif;letter-spacing:.16em}
+.business-facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.business-fact{padding:28px;border-left:1px solid var(--line)}
+.business-fact:first-child{border-left:0}
+.business-fact small{display:block;color:#867e72;font:800 9px Arial,sans-serif;letter-spacing:.15em}
+.business-fact strong{display:block;margin-top:7px;font-size:18px}
+
+/* contact */
+.contact-wrap{display:grid;grid-template-columns:minmax(280px,.68fr) minmax(0,1.32fr);gap:64px;align-items:start}
+.contact-note{padding:36px 34px;background:#fffaf0;border:1px solid var(--line);box-shadow:10px 10px 0 var(--paper-deep)}
+.contact-note h2{margin:0;font-size:31px}
+.contact-note p{color:#655e54;font-size:13px}
+.contact-data{margin-top:26px;border-top:1px dashed #aaa092}
+.contact-data div{padding:15px 0;border-bottom:1px dashed #aaa092}
+.contact-data span{display:block;color:var(--red);font:800 9px Arial,sans-serif;letter-spacing:.14em}
+.contact-data strong{display:block;margin-top:4px;font-size:15px}
+.contact-form{padding-top:6px}
+.form-title{padding-bottom:22px;border-bottom:2px solid var(--ink)}
+.form-title h2{margin:0;font-size:38px}
+.form-grid{margin-top:28px;display:grid;gap:0}
+.form-row{display:grid;grid-template-columns:180px 1fr;gap:24px;align-items:start;padding:20px 0;border-bottom:1px solid var(--line)}
+.form-row label{font-size:12px;font-weight:800;padding-top:12px}
+.form-row input,.form-row textarea{width:100%;padding:12px 13px;border:1px solid #bcb4a7;background:#fffdf8;border-radius:0;outline:none}
+.form-row input:focus,.form-row textarea:focus{border-color:var(--red);box-shadow:0 0 0 2px rgba(166,59,48,.1)}
+.form-actions{display:flex;align-items:center;justify-content:space-between;gap:22px;margin-top:28px}
+.form-note{margin:0;color:#777065;font-size:11px;max-width:480px}
+
+/* CTA / footer */
+.cta{background:var(--olive);color:#fff}
+.cta-inner{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;padding:62px 0}
+.cta h2{margin:0;font-size:clamp(34px,4.5vw,56px);line-height:1.2}
+.cta p{margin:10px 0 0;color:#e2e4da}
+.site-footer{background:#171815;color:#fff}
+.footer-main{display:grid;grid-template-columns:1fr auto;gap:50px;align-items:end;padding:50px 0 28px}
+.footer-logo img{width:230px;filter:brightness(0) invert(1)}
+.footer-nav{display:flex;gap:18px 26px;flex-wrap:wrap;justify-content:flex-end;color:#d6d3cb;font-size:11px}
+.footer-bottom{display:flex;justify-content:space-between;gap:24px;padding:18px 0 24px;border-top:1px solid rgba(255,255,255,.15);color:#908e88;font-size:10px}
+
+@media(max-width:980px){
+  .header-inner{grid-template-columns:auto 1fr auto}
+  .site-nav,.header-contact{display:none}
+  .menu-button{display:block;justify-self:end}
+  .site-nav.open{display:flex;position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;padding:12px 24px 18px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 36px rgba(32,29,24,.12)}
+  .site-nav.open a{padding:13px 4px}
+  .home-hero{grid-template-columns:1.2fr .8fr}
+  .hero-manifesto h1{font-size:54px}
+  .craft-intro{grid-template-columns:1fr;gap:48px}
+  .craft-note{max-width:620px}
+  .ledger-row{grid-template-columns:80px 1fr}
+  .ledger-side{grid-column:2}
+  .work-ledger-head{grid-template-columns:1fr;gap:20px}
+  .person-card{width:58%}
+  .message-grid{grid-template-columns:1fr 1fr;gap:44px}
+  .core-business{grid-template-columns:1fr}
+  .core-photo{min-height:420px}
+  .contact-wrap{grid-template-columns:1fr;gap:46px}
+  .contact-note{max-width:620px}
+}
+
+@media(max-width:760px){
+  .container{width:min(calc(100% - 30px),var(--max))}
+  .section{padding:74px 0}
+  .header-inner{min-height:78px}
+  .logo img{width:200px}
+  .home-hero{grid-template-columns:1fr;min-height:0}
+  .hero-photo{min-height:520px}
+  .hero-manifesto{padding:34px 22px}
+  .hero-manifesto-inner{height:auto;min-height:300px;align-items:flex-start;gap:18px}
+  .hero-manifesto .eyebrow{writing-mode:horizontal-tb}
+  .hero-manifesto h1{writing-mode:horizontal-tb;font-size:clamp(44px,13vw,68px);line-height:1.12;letter-spacing:-.04em}
+  .hero-manifesto .hero-mark{align-self:flex-end}
+  .hero-caption{left:15px;right:15px;bottom:15px;max-width:none}
+  .craft-note{box-shadow:7px 7px 0 var(--paper-deep)}
+  .ledger-row{grid-template-columns:58px 1fr;gap:18px}
+  .ledger-no{font-size:32px}
+  .ledger-row h3{font-size:23px}
+  .ledger-side{padding-left:0;border-left:0}
+  .person-story{min-height:0;padding-top:320px;background-position:40% center}
+  .person-card{width:100%;min-height:0;padding:44px 24px}
+  .page-hero-photo{height:300px}
+  .page-label{width:calc(100% - 30px);margin-top:-54px;padding:28px 22px}
+  .page-label-grid{grid-template-columns:1fr;gap:12px}
+  .page-label .page-no{font-size:50px}
+  .message-grid{grid-template-columns:1fr;gap:44px}
+  .message-photo{min-height:420px}
+  .message-photo::after{right:8px}
+  .profile-row{grid-template-columns:1fr;gap:6px;padding:16px 4px}
+  .service-thread{padding-left:58px}
+  .service-thread::before{left:18px}
+  .thread-item::before{left:-58px;width:40px;height:40px}
+  .core-copy{padding:36px 24px 40px}
+  .business-facts{grid-template-columns:1fr}
+  .business-fact{border-left:0;border-bottom:1px solid var(--line)}
+  .business-fact:last-child{border-bottom:0}
+  .form-row{grid-template-columns:1fr;gap:8px}
+  .form-row label{padding-top:0}
+  .form-actions,.cta-inner,.footer-main,.footer-bottom{display:flex;flex-direction:column;align-items:flex-start}
+  .footer-nav{justify-content:flex-start}
+}
