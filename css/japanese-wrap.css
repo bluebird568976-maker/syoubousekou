@@ -18,6 +18,23 @@ html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hy
   .jp-flow wbr{display:none}
 }
 
-.hero-journal>*,.hero-meta>*,.philosophy-grid>*,.work-note-head>*,.note-card,.person-story-grid>*,.page-hero-inner>*,.message-grid>*,.profile-row>*,.service-note>*,.business-feature>*,.business-facts>*,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
+/* 大きなH1/H2だけ、PCとスマホで改行の考え方を分ける。
+   PCは意味のまとまりの途中で割らず、必要なときだけまとまり間で折り返す。 */
+@media(min-width:981px){
+  h1.jp-flow .jp-phrase,
+  h2.jp-flow .jp-phrase{display:inline-block;max-width:100%;white-space:nowrap}
+  h1.jp-flow wbr,
+  h2.jp-flow wbr{display:inline}
+}
 
-@media(max-width:720px){p,li,dt,dd,label{max-width:100%}}
+/* スマホは、あらかじめ設定した意味のまとまりごとに改行する。
+   1フレーズ自体が画面幅を超える場合だけ、その中で自然に折り返せる余地を残す。 */
+@media(max-width:720px){
+  p,li,dt,dd,label{max-width:100%}
+  h1.jp-flow .jp-phrase,
+  h2.jp-flow .jp-phrase{display:block;max-width:100%;white-space:normal}
+  h1.jp-flow wbr,
+  h2.jp-flow wbr{display:none}
+}
+
+.hero-journal>*,.hero-meta>*,.philosophy-grid>*,.work-note-head>*,.note-card,.person-story-grid>*,.page-hero-inner>*,.message-grid>*,.profile-row>*,.service-note>*,.business-feature>*,.business-facts>*,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
