@@ -338,18 +338,6 @@ body{
   background-color:#fff8eb;
   background-image:repeating-linear-gradient(180deg,transparent 0 36px,rgba(95,82,66,.08) 36px 37px);
 }
-.contact-note::before{
-  content:"受付票";
-  display:inline-block;
-  margin-bottom:15px;
-  padding:4px 8px;
-  border:1px solid var(--work-red);
-  color:var(--work-red);
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:.16em;
-  transform:rotate(-2deg);
-}
 .contact-form{
   background:#fffdf8;
   border-top:4px solid var(--work-ink);
