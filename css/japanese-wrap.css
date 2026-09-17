@@ -45,7 +45,7 @@ h2.jp-flow wbr{display:inline}
   .jp-flow:not(h1):not(h2) wbr{display:none}
 }
 
-/* PCでは画面そのものではなく、文字側カラムの実幅を広げて指定フレーズを収める。
+/* PCでは文字サイズは元のデザイン設定を使い、文字側カラムの実幅だけを広げる。
    改行ポイント（.jp-phrase / wbr）は変更しない。 */
 @media(min-width:981px){
   /* 大画面PCでは1180pxで頭打ちにせず、余っている横幅を活用する */
@@ -55,11 +55,6 @@ h2.jp-flow wbr{display:inline}
   .hero-journal{
     grid-template-columns:minmax(0,1.08fr) minmax(400px,.92fr);
     gap:42px;
-  }
-  .hero-copy h1{
-    font-size:40px;
-    line-height:1.42;
-    letter-spacing:.01em;
   }
 
   /* 人柄紹介：右の文章カラムを広げ、左右余白も少し詰める */
@@ -74,10 +69,6 @@ h2.jp-flow wbr{display:inline}
     max-width:none;
     min-width:0;
   }
-  .person-copy h2{
-    font-size:30px;
-    line-height:1.58;
-  }
 
   /* 事業内容：写真より文章側を広めに取る */
   .business-feature{
@@ -90,16 +81,6 @@ h2.jp-flow wbr{display:inline}
     width:100%;
     max-width:none;
     min-width:0;
-  }
-  .business-copy h2{
-    font-size:34px;
-    line-height:1.55;
-  }
-
-  /* 会社概要側の大見出しも余裕を持たせる */
-  .message-copy h2{
-    font-size:38px;
-    line-height:1.55;
   }
 }
 
