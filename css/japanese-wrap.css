@@ -28,13 +28,34 @@ html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hy
 }
 
 /* スマホは、あらかじめ設定した意味のまとまりごとに改行する。
-   1フレーズ自体が画面幅を超える場合だけ、その中で自然に折り返せる余地を残す。 */
+   文字サイズもスマホ幅に合わせ、大きな見出しが横幅ぎりぎりにならないよう調整する。 */
 @media(max-width:720px){
   p,li,dt,dd,label{max-width:100%}
+
   h1.jp-flow .jp-phrase,
   h2.jp-flow .jp-phrase{display:block;max-width:100%;white-space:normal}
   h1.jp-flow wbr,
   h2.jp-flow wbr{display:none}
+
+  .hero-copy h1{
+    font-size:clamp(34px,10vw,42px);
+    line-height:1.38;
+    letter-spacing:0;
+  }
+
+  .section-title,
+  .philosophy-copy h2,
+  .message-copy h2,
+  .person-copy h2,
+  .business-copy h2{
+    font-size:clamp(30px,8.6vw,38px);
+    line-height:1.5;
+  }
+
+  .cta h2{
+    font-size:clamp(27px,7.6vw,34px);
+    line-height:1.5;
+  }
 }
 
 .hero-journal>*,.hero-meta>*,.philosophy-grid>*,.work-note-head>*,.note-card,.person-story-grid>*,.page-hero-inner>*,.message-grid>*,.profile-row>*,.service-note>*,.business-feature>*,.business-facts>*,.contact-wrap>*,.form-row>*,.cta-inner>*{min-width:0}
