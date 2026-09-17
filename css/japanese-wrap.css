@@ -15,56 +15,41 @@ main>section{width:100%;max-width:100%}
 }
 
 .jp-flow{line-break:strict;overflow-wrap:normal;hyphens:none}
+
+/* 大きなH1/H2は、HTMLで指定した .jp-phrase を一つの塊として扱う。
+   横幅に余裕があれば同じ行に並び、入らなくなった時だけ wbr の位置で塊ごと次行へ送る。
+   これによりPC/タブレット/スマホで改行位置が文字途中に散らばりにくくなる。 */
+h1.jp-flow,
+h2.jp-flow{
+  max-width:100%;
+  min-width:0;
+}
+h1.jp-flow .jp-phrase,
+h2.jp-flow .jp-phrase{
+  display:inline-block;
+  max-width:100%;
+  white-space:nowrap;
+  vertical-align:baseline;
+}
+h1.jp-flow wbr,
+h2.jp-flow wbr{display:inline}
+
+/* 本文など、見出し以外の .jp-flow はブラウザの自然な日本語改行を使う。 */
 @supports not (word-break:auto-phrase){
-  .jp-flow{word-break:keep-all}
-  .jp-flow .jp-phrase{display:inline-block;max-width:100%;white-space:nowrap}
-  .jp-flow wbr{display:inline}
+  .jp-flow:not(h1):not(h2){word-break:normal}
+  .jp-flow:not(h1):not(h2) .jp-phrase{display:inline;max-width:none;white-space:normal}
+  .jp-flow:not(h1):not(h2) wbr{display:inline}
 }
 @supports (word-break:auto-phrase){
-  .jp-flow .jp-phrase{display:inline;max-width:none;white-space:normal}
-  .jp-flow wbr{display:none}
+  .jp-flow:not(h1):not(h2) .jp-phrase{display:inline;max-width:none;white-space:normal}
+  .jp-flow:not(h1):not(h2) wbr{display:none}
 }
 
-/* 大きなH1/H2だけ、PCとスマホで改行の考え方を分ける。
-   PCは意味のまとまりの途中で割らず、必要なときだけまとまり間で折り返す。 */
-@media(min-width:981px){
-  h1.jp-flow .jp-phrase,
-  h2.jp-flow .jp-phrase{display:inline-block;max-width:100%;white-space:nowrap}
-  h1.jp-flow wbr,
-  h2.jp-flow wbr{display:inline}
-}
-
-/* スマホはフレーズ単位の改行を優先しつつ、長いフレーズは必ず画面内で折り返す。
-   auto-phrase未対応のiPhone系ブラウザでもkeep-allを残さない。 */
+/* スマホでは、指定した塊を保てるよう大見出しの文字サイズを画面幅に合わせる。
+   塊そのものが画面幅を超えないことを優先する。 */
 @media(max-width:720px){
   p,li,dt,dd,label{max-width:100%}
 
-  .jp-flow{
-    max-width:100%;
-    word-break:normal;
-    overflow-wrap:break-word;
-  }
-
-  h1.jp-flow,
-  h2.jp-flow{
-    width:100%;
-    min-width:0;
-    max-width:100%;
-  }
-
-  h1.jp-flow .jp-phrase,
-  h2.jp-flow .jp-phrase{
-    display:block;
-    width:100%;
-    max-width:100%;
-    white-space:normal;
-    word-break:normal;
-    overflow-wrap:break-word;
-  }
-  h1.jp-flow wbr,
-  h2.jp-flow wbr{display:none}
-
-  /* flex/grid内の文章ブロックがmin-content幅で横へ伸びないようにする */
   .business-copy,
   .business-copy-inner,
   .person-copy,
@@ -89,8 +74,8 @@ main>section{width:100%;max-width:100%}
   }
 
   .hero-copy h1{
-    font-size:clamp(34px,10vw,42px);
-    line-height:1.38;
+    font-size:clamp(30px,8.4vw,38px);
+    line-height:1.4;
     letter-spacing:0;
   }
 
@@ -100,13 +85,13 @@ main>section{width:100%;max-width:100%}
   .person-copy h2,
   .business-copy h2{
     max-width:100%;
-    font-size:clamp(30px,8.6vw,38px);
+    font-size:clamp(22px,7vw,34px);
     line-height:1.5;
   }
 
   .cta h2{
     max-width:100%;
-    font-size:clamp(27px,7.6vw,34px);
+    font-size:clamp(22px,7vw,32px);
     line-height:1.5;
   }
 }
