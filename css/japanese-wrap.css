@@ -45,29 +45,29 @@ h2.jp-flow wbr{display:inline}
   .jp-flow:not(h1):not(h2) wbr{display:none}
 }
 
-/* PCでは改行ルールを変えず、各見出しが実際に入っているカラム幅を基準に文字サイズを調整する。 */
+/* PCでは画面そのものではなく、文字側カラムの実幅を広げて指定フレーズを収める。
+   改行ポイント（.jp-phrase / wbr）は変更しない。 */
 @media(min-width:981px){
-  .hero-copy,
-  .message-copy,
-  .person-copy-inner,
-  .business-copy-inner{
-    container-type:inline-size;
-  }
+  /* 大画面PCでは1180pxで頭打ちにせず、余っている横幅を活用する */
+  :root{--max:1280px}
 
-  /* cqw未対応ブラウザ向けの安全な基準値 */
+  /* トップ：写真側に寄りすぎていた比率を戻し、見出し側を広げる */
+  .hero-journal{
+    grid-template-columns:minmax(0,1.08fr) minmax(400px,.92fr);
+    gap:42px;
+  }
   .hero-copy h1{
     font-size:40px;
     line-height:1.42;
     letter-spacing:.01em;
   }
 
-  .message-copy h2{
-    font-size:36px;
-    line-height:1.55;
+  /* 人柄紹介：右の文章カラムを広げ、左右余白も少し詰める */
+  .person-story-grid{
+    grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);
   }
-
   .person-copy{
-    padding:clamp(36px,3.5vw,50px) clamp(22px,2.5vw,34px);
+    padding:48px 30px;
   }
   .person-copy-inner{
     width:100%;
@@ -75,12 +75,16 @@ h2.jp-flow wbr{display:inline}
     min-width:0;
   }
   .person-copy h2{
-    font-size:28px;
+    font-size:30px;
     line-height:1.58;
   }
 
+  /* 事業内容：写真より文章側を広めに取る */
+  .business-feature{
+    grid-template-columns:minmax(0,.9fr) minmax(500px,1.1fr);
+  }
   .business-copy{
-    padding:clamp(36px,3.5vw,50px) clamp(24px,2.8vw,38px);
+    padding:48px 34px;
   }
   .business-copy-inner{
     width:100%;
@@ -88,27 +92,14 @@ h2.jp-flow wbr{display:inline}
     min-width:0;
   }
   .business-copy h2{
-    font-size:32px;
+    font-size:34px;
     line-height:1.55;
   }
 
-  /* 対応ブラウザではviewportではなく各カラム自身の幅に追従させる */
-  @supports (font-size:1cqw){
-    .hero-copy h1{
-      font-size:clamp(32px,8.2cqw,46px);
-    }
-
-    .message-copy h2{
-      font-size:clamp(28px,7.2cqw,42px);
-    }
-
-    .person-copy h2{
-      font-size:clamp(24px,6.6cqw,30px);
-    }
-
-    .business-copy h2{
-      font-size:clamp(28px,6.6cqw,36px);
-    }
+  /* 会社概要側の大見出しも余裕を持たせる */
+  .message-copy h2{
+    font-size:38px;
+    line-height:1.55;
   }
 }
 
