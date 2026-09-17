@@ -1,6 +1,13 @@
 /* 日本語を文字単位で不自然に落とさず、文節に近い位置で折り返す共通ルール */
 html[lang="ja"],body{line-break:strict;word-break:normal;overflow-wrap:normal;hyphens:none}
 
+/* 回転・影・疑似要素などの装飾で横スクロール領域が広がらないようにする。
+   ページ本体は常にビューポート幅いっぱいを使う。 */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+@supports (overflow:clip){html,body{overflow-x:clip}}
+.site-header,main,.site-footer{width:100%;max-width:100%}
+main>section{width:100%;max-width:100%}
+
 @supports (word-break:auto-phrase){
   html[lang="ja"],body{word-break:auto-phrase}
   p,li,dt,dd,label,.hero-copy p,.hero-note p,.philosophy-copy p,.note-card p,.person-copy p,.page-hero-copy p,.message-copy p,.service-note p,.service-note aside,.business-copy p,.contact-note p,.form-note{word-break:auto-phrase;text-wrap:pretty}
