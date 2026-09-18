@@ -28,9 +28,13 @@ h1.jp-flow .jp-phrase,
 h2.jp-flow .jp-phrase{
   display:inline-block;
   max-width:100%;
-  white-space:nowrap;
+  white-space:normal;
+  word-break:keep-all;
   vertical-align:baseline;
 }
+/* 外側の意味の塊を優先し、塊自体がカラムを超える場合だけ内側の意味区切りで折り返す。 */
+h1.jp-flow .jp-part,
+h2.jp-flow .jp-part{display:inline-block;white-space:nowrap}
 h1.jp-flow wbr,
 h2.jp-flow wbr{display:inline}
 
@@ -84,8 +88,7 @@ h2.jp-flow wbr{display:inline}
   }
 }
 
-/* スマホでは、指定した塊を保てるよう大見出しの文字サイズを画面幅に合わせる。
-   塊そのものが画面幅を超えないことを優先する。 */
+/* 既存のスマホ用文字サイズは維持。余白・カラム幅・意味区切りで横はみ出しを防ぐ。 */
 @media(max-width:720px){
   p,li,dt,dd,label{max-width:100%}
 
