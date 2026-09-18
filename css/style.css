@@ -169,7 +169,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 
 /* business */
 .work-detail{padding-top:56px;padding-bottom:84px}
-.business-copy{padding:62px 0 0}
+.work-detail .business-copy{padding:62px 0 0}
 .business-copy-inner{max-width:1040px;margin-left:auto}
 .business-copy .eyebrow{margin-bottom:20px}
 .business-copy h2{font-size:clamp(40px,5vw,62px);line-height:1.5}
