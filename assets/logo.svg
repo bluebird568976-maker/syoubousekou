@@ -1,28 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 104" role="img" aria-labelledby="title desc">
-  <title id="title">○○○○株式会社 サンプルロゴ</title>
-  <desc id="desc">職人の道具、消防設備、検印をイメージした架空ロゴ</desc>
-  <rect width="520" height="104" fill="none"/>
-  <g transform="translate(8 10)">
-    <circle cx="42" cy="42" r="35" fill="none" stroke="#2d2a26" stroke-width="2.4"/>
-    <circle cx="42" cy="42" r="29" fill="none" stroke="#8c8173" stroke-width="1" stroke-dasharray="3 4"/>
-    <g fill="none" stroke="#2d2a26" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M27 57L56 28"/>
-      <path d="M31 25c4 2 8 2 12-1l-6 9-8 1-5-5z"/>
-      <path d="M55 57L30 32"/>
-      <path d="M58 59l5 5"/>
-    </g>
-    <circle cx="27" cy="58" r="4" fill="#9b4a3f"/>
-    <circle cx="57" cy="28" r="3" fill="#9b4a3f"/>
-    <rect x="18" y="72" width="48" height="10" fill="#2d2a26"/>
-    <text x="42" y="80" text-anchor="middle" fill="#f7f3ea" font-family="'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif" font-size="7" font-weight="700" letter-spacing="1.2">現場施工</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 80" role="img" aria-labelledby="title desc">
+  <title id="title">○○○○株式会社</title>
+  <desc id="desc">消防設備の施工会社を想定した架空企業のロゴ</desc>
+  <g fill="none" stroke="#153440" stroke-width="5" stroke-linejoin="miter">
+    <path d="M8 57V17h40v40H8Z"/>
+    <path d="M19 46V28h18v18H19Z"/>
+    <path d="M8 57l11-11M37 28l11-11"/>
   </g>
-  <g fill="#2d2a26">
-    <text x="100" y="43" font-family="'Yu Mincho','Hiragino Mincho ProN',serif" font-size="29" font-weight="600" letter-spacing="1">○○○○株式会社</text>
-    <text x="102" y="70" font-family="'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif" font-size="10" font-weight="700" letter-spacing="2.5">FIRE SAFETY CRAFT / KANSAI</text>
-  </g>
-  <g transform="translate(454 19) rotate(-4 23 23)">
-    <rect x="0" y="0" width="46" height="46" fill="none" stroke="#9b4a3f" stroke-width="2"/>
-    <rect x="4" y="4" width="38" height="38" fill="none" stroke="#9b4a3f" stroke-width="1" opacity=".55"/>
-    <text x="23" y="30" text-anchor="middle" fill="#9b4a3f" font-family="'Yu Mincho','Hiragino Mincho ProN',serif" font-size="20" font-weight="600">匠</text>
+  <g fill="#153440" font-family="'Yu Gothic','Hiragino Kaku Gothic ProN',Meiryo,sans-serif">
+    <text x="66" y="37" font-size="28" font-weight="700" letter-spacing="1">○○○○株式会社</text>
+    <text x="67" y="59" font-size="10" font-weight="500" letter-spacing="2.4">FIRE SAFETY / KANSAI</text>
   </g>
 </svg>
