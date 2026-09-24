@@ -144,7 +144,7 @@ h1,h2,h3{margin:0;color:inherit;font-family:var(--body-font);font-weight:700;let
 .about-statement{margin-top:72px}
 .message-copy h2{font-size:clamp(42px,5.6vw,72px);line-height:1.45}
 .profile-section{background:var(--surface)}
-.profile-layout{display:grid;grid-template-columns:260px minmax(0,1fr);gap:72px}
+.profile-layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:72px}
 .profile-layout>*{min-width:0}
 .profile-heading{align-self:start;position:sticky;top:120px}
 .profile-section .sample-note{padding:0 0 28px;background:transparent}
